@@ -6,8 +6,10 @@
 ## SIMULACIÓN DE COMPUERTAS LOGICAS CON ARDUINO
 ### Descripción del Proyecto
 El objetivo del proyecto es simular el funcionamiento de las compuertas logicas AND, OR y NOT, utiizando un arduino modelo uno, el sistema se caratceriza por leer las entras digitales (pulsadores) y realiza el proceso de las señales mediante el codigo para activar las salidas visuales (LED's) segun la logica.
+
 ### Lista de componente
 <img width="601" height="249" alt="image" src="https://github.com/user-attachments/assets/53bf60f6-e2db-4b7d-993a-63da791d80b5" />
+
 ### Tablas de Verdad y Lógica Aplicada
 El código evalua cada una de las entradas según las siguientes operaciones:
 #### A. Compuerta AND (LED Rojo - Pin 8)
@@ -32,6 +34,7 @@ Es un inversor de la Entrada A. Si no se presiona, el LED brilla; si se presiona
 | :---: | :---: |
 | 0 | 1 |
 | 1 | 0 |
+
 ### Análisis de Funcionamiento Técnico
 #### Configuración de Entradas: 
 En los pines 2 y 2 estan configurados como el INPUT, el momento de precionar el boton el pin recibe 5V.
@@ -41,6 +44,7 @@ El comando **digitalRead** captura el estado de los botones. El software realiza
 El comando **digitalWrite** envía la señal a los pines 8, 9 y 10. 
 #### Protección de Hardware: 
 Se utiliza una resistencia con los LEDs para limitar la corriente según la Ley de Ohm ($V = I \times R$), protegiendo tanto los diodos como los pines del microcontrolador.
+
 ### Codigo Usado
 void setup() {\
   pinMode(2, INPUT);   // Pulsador A \

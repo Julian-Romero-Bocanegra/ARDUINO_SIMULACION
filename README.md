@@ -3,6 +3,18 @@
 **Docente:** Diego Alejandro Barragán Vargas \
 **Institución:** Fundación Universitaria Compensar.
 
+## INTRODUCCIÓN
+El presente se documenta el desarrollo y la implementación de simulaciones tecnológicas con la implemnteacion del Arduino Uno. El objetivo principal de este informe es aplicar conceptos de la electrónica digital, la lógica de programación (C++) y el control de sistemas embebidos para resolver problemas de procesamiento de datos y automatización.
+A lo largo del documento, se exploran tres áreas críticas:
+### Lógica Combinatoria: 
+Mediante la simulacion de compuertas lógicas (AND, OR, NOT) para el procesamiento de señales binarias.
+### Sistemas de Numeración: 
+A través de un conversor de binario a hexadecimal (decodificador) que utiliza un display de 7 segmentos para la visualización de datos.
+### Sistemas de Control Secuencial: 
+Con la creación de un semáforo vial automatizado que gestiona estados basados en la porgramcion de tiempo precisos.
+
+Esta práctica permite cerrar la brecha entre la teoría de los circuitos digitales y la implementación práctica mediante código, demostrando la versatilidad de los microcontroladores en el entorno de la ingeniería.
+
 ## SIMULACIÓN DE COMPUERTAS LOGICAS CON ARDUINO
 ### Descripción del Proyecto
 El objetivo del proyecto es simular el funcionamiento de las compuertas logicas AND, OR y NOT, utiizando un arduino modelo uno, el sistema se caratceriza por leer las entras digitales (pulsadores) y realiza el proceso de las señales mediante el codigo para activar las salidas visuales (LED's) segun la logica.

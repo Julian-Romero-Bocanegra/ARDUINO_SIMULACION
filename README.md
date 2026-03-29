@@ -70,7 +70,7 @@ void loop() { \
 
 ## SIMULACION DEL CONVERSOR BINARIO A HEXADECIMAL
 ### Descripción del Proyecto
-Este ejercicio consiste en diseñar un sistema que reciba un número de 4 bits (sistema binario) mediante un interruptor DIP de 8 posiciones (usando solo 4) y lo traduzca a su representación equivalente en el sistema hexadecimal (0-F) utilizando un display de 7 segmentos.
+Este ejercicio consiste en un sistema que reiba un numero de 4 bits por medio de un interruptor DIP de 8 posiciones (NOTA: se usa el interruptor de 8 posiciones porque en wokwi no se enuentra el de 4 posiciones) donde solo se debe hacer uso de 4 posiciones y lo traduzca a su representacion equivalente en el sistema hexadecimal por medio de un display de 7 segmentos.
 
 ### Lista de componentes
 <img width="682" height="274" alt="image" src="https://github.com/user-attachments/assets/99c96032-2ad0-4604-a803-ba971bb6ff14" />
@@ -79,43 +79,41 @@ Este ejercicio consiste en diseñar un sistema que reciba un número de 4 bits (
 <img width="911" height="316" alt="image" src="https://github.com/user-attachments/assets/db07ab1d-e528-4fd8-aa97-5982b53ea890" />
 
 ### Funcionamiento Técnico
-Lectura de Entradas: El programa lee los estados lógicos de los pines 2, 3, 4 y 5. Cada pin tiene un "peso" binario que el código suma para obtener un valor decimal entre 0 y 15.
+#### Lectura de Entradas: 
+El programa lee los estados de los pines 2, 3, 4 y 5. Cada pin tiene un "peso" binario que el código suma para obtener un valor decimal entre 0 y 15.
 
 #### Decodificación: 
-Se utiliza un arreglo constante llamado hexMap. Este contiene la configuración de bits necesaria para encender los segmentos específicos del display (a, b, c, d, e, f, g) según el número calculado.
+Se utiliza un arreglo constante llamado **hexMap**. Este contiene la configuración de bits necesaria para encender los segmentos específicos del display (a, b, c, d, e, f, g) según el número calculado.
 
 #### Configuración de Ánodo Común: 
-El display utilizado tiene los ánodos conectados a 5V. Por lo tanto, el Arduino activa cada segmento enviando un estado BAJO (0), permitiendo que la corriente fluya a través del LED correspondiente.
+El display utilizado tiene los ánodos conectados a 5V. Por lo tanto, el Arduino enciende cada segmento enviando un estado BAJO (0), permitiendo que la corriente fluya a través del LED correspondiente.
 
 ### Lógica de Programación (Fragmento Clave)
-En el informe es importante mencionar el uso de la función bitRead(), la cual permite extraer cada bit del mapa hexadecimal y enviarlo al pin físico del display de forma secuencial.
+Es importante mencionar el uso de la función **bitRead()**, la cual permite extraer cada bit del mapa hexadecimal y enviarlo al pin físico del display de forma secuencial.
 
 ### Codigo Usado
-const int segmentos[] = {6, 7, 8, 9, 10, 11, 12};
-// Mapa para Ánodo Común (0 enciende, 1 apaga)
-const byte hexMap[16] = {
-  0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 
-  0x00, 0x10, 0x08, 0x03, 0x46, 0x21, 0x06, 0x0E
-};
-
-void setup() {
-  for (int i = 2; i <= 5; i++) pinMode(i, INPUT);
-  for (int i = 0; i < 7; i++) pinMode(segmentos[i], OUTPUT);
-}
-
-void loop() {
-  // Leer los 4 bits (1, 2, 4, 8)
-  int valor = digitalRead(2) * 1 + 
-              digitalRead(3) * 2 + 
-              digitalRead(4) * 4 + 
-              digitalRead(5) * 8;
-
-  byte patron = hexMap[valor];
-  for (int i = 0; i < 7; i++) {
-    digitalWrite(segmentos[i], bitRead(patron, i));
-  }
-  delay(100);
-}
+const int segmentos[] = {6, 7, 8, 9, 10, 11, 12};\
+// Mapa para Ánodo Común (0 enciende, 1 apaga)\
+const byte hexMap[16] = {\
+  0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, \
+  0x00, 0x10, 0x08, 0x03, 0x46, 0x21, 0x06, 0x0E\
+};\
+void setup() {\
+  for (int i = 2; i <= 5; i++) pinMode(i, INPUT);\
+  for (int i = 0; i < 7; i++) pinMode(segmentos[i], OUTPUT);\
+}\
+void loop() {\
+  // Leer los 4 bits (1, 2, 4, 8)\
+  int valor = digitalRead(2) * 1 + \
+              digitalRead(3) * 2 + \
+              digitalRead(4) * 4 + \
+              digitalRead(5) * 8;\
+  byte patron = hexMap[valor];\
+  for (int i = 0; i < 7; i++) { \
+    digitalWrite(segmentos[i], bitRead(patron, i));\
+  }\
+  delay(100);\
+}\
 ### implementacion del sistema en wokwi
 <img width="670" height="577" alt="image" src="https://github.com/user-attachments/assets/e88cdbfc-84bd-4a5d-8a1c-000922ce0eb7" />
 <img width="1918" height="717" alt="image" src="https://github.com/user-attachments/assets/f70835cc-69db-4eb9-bb7a-5b930dd9ea4c" />

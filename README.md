@@ -118,3 +118,57 @@ void loop() {\
 <img width="670" height="577" alt="image" src="https://github.com/user-attachments/assets/e88cdbfc-84bd-4a5d-8a1c-000922ce0eb7" />
 <img width="1918" height="717" alt="image" src="https://github.com/user-attachments/assets/f70835cc-69db-4eb9-bb7a-5b930dd9ea4c" />
 
+## SIMULACION DE SEMAFORO VIAL CON TIEMPO
+
+### Descripción del Proyecto
+Este ejercicio consiste en la programación de un sistema de control de tráfico automatizado. El objetivo es emular el ciclo de un semáforo real, gestionando el encendido y apagado secuencial de tres indicadores (Rojo, Amarillo y Verde) mediante el uso de temporizadores programados en el microcontrolador
+### Lista de componentes
+<img width="704" height="257" alt="image" src="https://github.com/user-attachments/assets/c7ab91a1-212c-4279-98ac-936b3ab3bce6" />
+
+### Secuencia de Funcionamiento y Tiempos
+El ciclo de trabajo está diseñado para repetirse indefinidamente (bucle), siguiendo la lógica de seguridad vial estándar:
+
+Análisis Técnico de Programación
+Definición de Salidas: Se configuran los pines 11, 12 y 13 como OUTPUT en la función setup() para enviar señales de voltaje a los LEDs.
+
+Control de Estados: Se utiliza la función digitalWrite(pin, HIGH/LOW) para activar o desactivar cada color individualmente.
+
+Gestión de Retardos: Se implementa la función delay(), la cual pausa la ejecución del código por una cantidad específica de milisegundos. Esta pausa es la que determina cuánto tiempo permanece encendido cada color antes de pasar al siguiente bloque de instrucciones.
+
+Estructura Cíclica: Al estar dentro de la función loop(), el semáforo reinicia automáticamente al color verde después de completar la fase roja, garantizando un funcionamiento continuo.
+
+### Codigo Usado
+// Definición de pines para el semáforo
+const int ledRojo = 13;
+const int ledAmarillo = 12;
+const int ledVerde = 11;
+
+void setup() {
+  // Configurar los pines como salida
+  pinMode(ledRojo, OUTPUT);
+  pinMode(ledAmarillo, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+}
+
+void loop() {
+  // 1. VERDE: El tráfico fluye (5 segundos)
+  digitalWrite(ledVerde, HIGH);
+  digitalWrite(ledAmarillo, LOW);
+  digitalWrite(ledRojo, LOW);
+  delay(5000); 
+
+  // 2. AMARILLO: Precaución, va a cambiar (2 segundos)
+  digitalWrite(ledVerde, LOW);
+  digitalWrite(ledAmarillo, HIGH);
+  delay(2000);
+
+  // 3. ROJO: El tráfico se detiene (5 segundos)
+  digitalWrite(ledAmarillo, LOW);
+  digitalWrite(ledRojo, HIGH);
+  delay(5000);
+}
+
+### implementacion del sistema en wokwi
+<img width="601" height="554" alt="image" src="https://github.com/user-attachments/assets/deec2289-4ffd-46ac-a588-1448e30e41ad" />
+<img width="1919" height="766" alt="image" src="https://github.com/user-attachments/assets/f16b87cc-37dc-4a40-baaa-d4340dc078c5" />
+

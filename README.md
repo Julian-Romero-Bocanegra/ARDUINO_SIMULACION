@@ -13,8 +13,6 @@ A través de un conversor de binario a hexadecimal (decodificador) que utiliza u
 ### Sistemas de Control Secuencial: 
 Con la creación de un semáforo vial automatizado que gestiona estados basados en la porgramcion de tiempo precisos.
 
-Esta práctica permite cerrar la brecha entre la teoría de los circuitos digitales y la implementación práctica mediante código, demostrando la versatilidad de los microcontroladores en el entorno de la ingeniería.
-
 ## SIMULACIÓN DE COMPUERTAS LOGICAS CON ARDUINO
 ### Descripción del Proyecto
 El objetivo del proyecto es simular el funcionamiento de las compuertas logicas AND, OR y NOT, utiizando un arduino modelo uno, el sistema se caratceriza por leer las entras digitales (pulsadores) y realiza el proceso de las señales mediante el codigo para activar las salidas visuales (LED's) segun la logica.
@@ -184,3 +182,21 @@ void loop() {\
 ### implementacion del sistema en wokwi
 <img width="601" height="554" alt="image" src="https://github.com/user-attachments/assets/deec2289-4ffd-46ac-a588-1448e30e41ad" />
 <img width="1919" height="766" alt="image" src="https://github.com/user-attachments/assets/f16b87cc-37dc-4a40-baaa-d4340dc078c5" />
+
+## CONCLUSION
+A lo largo del desarrollo de este informe se documento **versatilidad del software sobre el hardware**, demostrando que la construccion de circuitos integrados de forma sencilla a partir del uso de compuertas lógicas, los decodificadores de display en conjunto con el uso de algoritmos de programación.
+
+Por otra parte, se demostró que la gestión del tiempo es tan fundamental como la lógica de entrada mediante la optimización del control de tiempo a través del uso del semáforo. El sistema puede manejar procesos del mundo real de forma autónoma, predecible y segura si se emplean con exactitud las funciones de retardo. Por último, todos los conceptos aplicados a lo largo de la práctica —desde la gestión de bits y tablas de verdad hasta la conversión de sistemas numéricos— forman el cimiento principal para la Ingeniería de Sistemas. Para entender cómo funcionan las unidades de procesamiento de datos y los sistemas de automatización industrial, que son el corazón de las fases avanzadas del programa, estos principios son fundamentales.
+
+## REFERENCIAS 
+Arduino. (s.f.). Arduino Uno Rev3. Arduino Official Store. https://store.arduino.cc/products/arduino-uno-rev3
+
+Compensar Unidad Panamericana de Compensar. (2026). Guía de laboratorio: Simulación de sistemas lógicas y control con microcontroladores. Facultad de Ingeniería.
+
+Floyd, T. L. (2016). Fundamentos de sistemas digitales (11a ed.). Pearson Educación. (Referencia para sustentar las tablas de verdad y lógica booleana de los puntos 1 y 2).
+
+Mano, M. M., & Ciletti, M. D. (2013). Diseño digital (5a ed.). Pearson Educación. (Referencia para la conversión de binario a hexadecimal y displays de 7 segmentos).
+
+Wokwi. (2026). Wokwi Arduino Simulator (Versión online). https://wokwi.com
+
+Asistencia Técnica: Google Gemini (2026). Apoyo en la estructuración de lenguaje Markdown y resolución de conflictos de versiones en Git

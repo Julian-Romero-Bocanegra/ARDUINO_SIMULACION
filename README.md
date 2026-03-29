@@ -22,13 +22,13 @@ Solo se enciende si A y B están presionados simultáneamente.
 | 1 | 1 | 1 |
 #### B. Compuerta OR (LED Amarillo - Pin 9)
 Se enciende si al menos uno de los pulsadores está presionado.
-
 | Entrada A | Entrada B | Salida (A || B) |
 | :---: | :---: | :---: |
 | 0 | 0 | 0 |
-| 1 | 0 | 1 |
 | 0 | 1 | 1 |
+| 1 | 0 | 1 |
 | 1 | 1 | 1 |
+
 #### C. Compuerta NOT (LED Verde - Pin 10)
 Es un inversor de la Entrada A. Si no se presiona, el LED brilla; si se presiona, el LED se apaga.
 | Entrada A | Salida (!A) |
